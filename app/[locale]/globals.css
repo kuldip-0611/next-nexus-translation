@@ -3,19 +3,44 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: theme("colors.white");
+  --background-secondary: theme("colors.gray.50");
+
+  --primary-dark: theme("colors.gray.900");
+  --primary-medium: theme("colors.gray.700");
+  --primary-light: theme("colors.gray.500");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+[data-theme="dark"] {
+  --background: theme("colors.black");
+  --background-secondary: theme("colors.gray.800");
+
+  --accent-dark: theme("colors.fuchsia.900");
+  --accent-medium: theme("colors.fuchsia.700");
+  --accent-light: theme("colors.fuchsia.500");
+
+  --primary-dark: theme("colors.gray.300");
+  --primary-medium: theme("colors.gray.200");
+  --primary-light: theme("colors.gray.100");
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+[data-theme="emerald"] {
+  --background: theme("colors.white");
+
+  --accent-dark: theme("colors.emerald.900");
+  --accent-medium: theme("colors.emerald.700");
+  --accent-light: theme("colors.emerald.500");
+}
+
+[data-theme="pink"] {
+  --background: theme("colors.gray.900");
+  --background-secondary: theme("colors.gray.800");
+
+  --accent-dark: theme("colors.pink.900");
+  --accent-medium: theme("colors.pink.700");
+  --accent-light: theme("colors.pink.500");
+
+  --primary-dark: theme("colors.gray.300");
+  --primary-medium: theme("colors.gray.200");
+  --primary-light: theme("colors.gray.100");
 }
